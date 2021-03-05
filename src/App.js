@@ -1,22 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import Profile from './profilePage';
-import NavBar from './NavBar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-
+import React from 'react';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import { LoginPage } from './LoginPage';
 
 function App() {
-
+  const history = createBrowserHistory();
   return (
     <div className="App">
-      <Router>
-      <NavBar />
-      <Switch>
-      <Profile exact path='/' component={Profile}/>
-      </Switch>
-      </Router>
+       <Router history={history}>
+          <Switch>
+              <Route path="/login" component={LoginPage} />
+              <Redirect from="*" to="/" />
+          </Switch>
+      </Router>        
     </div>
   );
 }
 
-export default App;
+export { App };
