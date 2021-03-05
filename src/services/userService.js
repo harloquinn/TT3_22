@@ -19,7 +19,7 @@ function login(username, password) {
     return fetch(`${requestURL}`,requestOptions)
         .then(handleResponse)
         .then(response => {  
-            localStorage.setItem('user', (response));
+            // localStorage.setItem('user', (response));
             localStorage.setItem('accountKey', JSON.stringify(response.accountKey));
             localStorage.setItem('firstName', JSON.stringify(response.firstName));
             localStorage.setItem('lastName', JSON.stringify(response.lastName));
@@ -33,7 +33,13 @@ function login(username, password) {
 }
 
 function logout() {
-    localStorage.removeItem('user');
+    localStorage.removeItem('accountKey');
+    localStorage.removeItem('firstName');
+    localStorage.removeItem('lastName');
+    localStorage.removeItem('nric');
+    localStorage.removeItem('address');
+    localStorage.removeItem('phoneNumber');
+    localStorage.removeItem('email');
 }
 
 function handleResponse(response) {

@@ -47,7 +47,11 @@ function Navbar() {
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
+<<<<<<< HEAD
               <Link to='/profile' className='nav-links' onClick={closeMobileMenu} >
+=======
+              <Link to='/profile' className='nav-links' >
+>>>>>>> mergeTest
                 Profile
               </Link>
             </li>
@@ -61,14 +65,14 @@ function Navbar() {
               </Link>
             </li>
             <li className='nav-item'>
-              <button
+              <Link
                 onClick={handleLogout}
                 to='/'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
                 Logout
-              </button>
+              </Link>
             </li>
           </ul>
             </div>
