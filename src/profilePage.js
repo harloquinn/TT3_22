@@ -3,15 +3,16 @@ import './profilePage.css';
 
 function Profile() {
 
-    const profile = {
-        "phoneNumber": "(+65) 96100402",
-        "accountKey": "2b14f7ac-c26a-43f9-a202-b7c79a2fdbde",
-        "lastName": "Mosciski",
-        "username": "Group22",
-        "address": "84463 Zackery Springs",
-        "email": "group22@techtrek.com",
-        "firstName": "Rhiannon",
-        "nric": "S30394410U"};
+    const [profile,setProfile] = useState({})
+
+    useEffect(async() => {
+
+
+     console.log(JSON.parse(localStorage.getItem('user.address')));
+
+    
+    },[]);
+
 
     //while waiting for localStorage.parse
 

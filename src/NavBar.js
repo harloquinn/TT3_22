@@ -10,12 +10,28 @@ function Navbar() {
 
   const handleClick = () => setClick(!click);
 
+  const closeMobileMenu = () => setClick(false);
+
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  };
+
+  useEffect(() => {
+    showButton();
+  }, []);
+
+  window.addEventListener('resize', showButton);
+
 
   return (
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
-          <Link to='/' className='navbar-logo' >
+          <Link to='/' className='navbar-logo' onClick={closeMobileMenu} >
             DBS
             </Link>
             <div className='navbar-icon'>
@@ -23,7 +39,7 @@ function Navbar() {
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-              <Link to='/' className='nav-links' >
+              <Link to='/' className='nav-links' onClick={closeMobileMenu} >
                 Profile
               </Link>
             </li>
@@ -31,7 +47,7 @@ function Navbar() {
               <Link
                 to='/services'
                 className='nav-links'
-    
+                onClick={closeMobileMenu}
               >
                 Buy/Sell
               </Link>
@@ -40,7 +56,7 @@ function Navbar() {
               <Link
                 to='/'
                 className='nav-links'
-                
+                onClick={closeMobileMenu}
               >
                 Logout
               </Link>
