@@ -26,13 +26,22 @@ function Navbar() {
     }
   };
 
+
+
+
+
+
+
   useEffect(() => {
     showButton();
   }, []);
 
   window.addEventListener('resize', showButton);
 
- 
+
+
+const shouldDisplayLogout = (JSON.parse(localStorage.getItem('firstName')));
+
 
 
   return (
@@ -47,11 +56,7 @@ function Navbar() {
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-<<<<<<< HEAD
               <Link to='/profile' className='nav-links' onClick={closeMobileMenu} >
-=======
-              <Link to='/profile' className='nav-links' >
->>>>>>> mergeTest
                 Profile
               </Link>
             </li>
@@ -64,16 +69,23 @@ function Navbar() {
                 Buy/Sell
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link
-                onClick={handleLogout}
-                to='/'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Logout
-              </Link>
-            </li>
+              {!shouldDisplayLogout && <li className='nav-item'>
+                <Link
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+                >
+                  Login
+                </Link>
+            </li> }
+            {shouldDisplayLogout && <li className='nav-item'>
+                <Link
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+                  onClick={handleLogout}
+                >
+                  Logout
+                </Link>
+            </li> }
           </ul>
             </div>
       </nav>
