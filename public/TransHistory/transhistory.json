@@ -1,0 +1,72 @@
+[
+    {
+        "accountKey": "2b14f7ac-c26a-43f9-a202-b7c79a2fdbde",
+        "orderType": "SELL",
+        "timestamp": 1613386102,
+        "assetAmount": 5,
+        "assetSymbol": "TTK",
+        "assetPrice": 22.13,
+        "cashAmount": 110.65,
+        "transactionId": 112218
+    },
+    {
+        "accountKey": "2b14f7ac-c26a-43f9-a202-b7c79a2fdbde",
+        "orderType": "SELL",
+        "timestamp": 1614324812,
+        "assetAmount": 19,
+        "assetSymbol": "TTK",
+        "assetPrice": 29.65,
+        "cashAmount": 563.35,
+        "transactionId": 187476
+    },
+    {
+        "accountKey": "2b14f7ac-c26a-43f9-a202-b7c79a2fdbde",
+        "orderType": "BUY",
+        "timestamp": 1614845891,
+        "assetAmount": 9,
+        "assetSymbol": "TTK",
+        "assetPrice": 33.19,
+        "cashAmount": 298.71,
+        "transactionId": 226298
+    },
+    {
+        "accountKey": "2b14f7ac-c26a-43f9-a202-b7c79a2fdbde",
+        "orderType": "SELL",
+        "timestamp": 1614324791,
+        "assetAmount": 12,
+        "assetSymbol": "TTK",
+        "assetPrice": 21.47,
+        "cashAmount": 257.64,
+        "transactionId": 637945
+    },
+    {
+        "accountKey": "2b14f7ac-c26a-43f9-a202-b7c79a2fdbde",
+        "orderType": "SELL",
+        "timestamp": 1614324805,
+        "assetAmount": 1,
+        "assetSymbol": "TTK",
+        "assetPrice": 23.71,
+        "cashAmount": 23.71,
+        "transactionId": 652410
+    },
+    {
+        "accountKey": "2b14f7ac-c26a-43f9-a202-b7c79a2fdbde",
+        "orderType": "BUY",
+        "timestamp": 1614324803,
+        "assetAmount": 6,
+        "assetSymbol": "TTK",
+        "assetPrice": 20.17,
+        "cashAmount": 121.02,
+        "transactionId": 771517
+    },
+    {
+        "accountKey": "2b14f7ac-c26a-43f9-a202-b7c79a2fdbde",
+        "orderType": "BUY",
+        "timestamp": 1614324808,
+        "assetAmount": 7,
+        "assetSymbol": "TTK",
+        "assetPrice": 20.29,
+        "cashAmount": 142.03,
+        "transactionId": 935093
+    }
+]
