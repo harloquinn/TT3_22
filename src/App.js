@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
-import { Provider, useDispatch, useSelector } from 'react-redux';
 import { createBrowserHistory } from 'history';
 import { LoginPage } from './LoginPage';
 
