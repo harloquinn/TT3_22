@@ -23,33 +23,30 @@ fetch('https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/bala
   return response.json();
 })
 .then((data) => {
+    localStorage.setItem('accountKey', JSON.stringify(data.accountKey));
+    localStorage.setItem('assetBalance', JSON.stringify(data.assetBalance));
+    localStorage.setItem('cashBalance', JSON.stringify(data.cashBalance));
 
   balances = data;
-  console.log(balances);
 
-  let asset = balances.assetBalance;
-  let cash = balances.cashBalance;
+  console.log(localStorage.getItem('assetBalance'));
 
-  document.getElementById('bal1').innerText = asset;
-  document.getElementById('bal2').innerText = cash;
-
-
-
-  console.log(asset)
 
 });
 
 
 class Home extends Component {
   render() {
+
     return (
+
+
           <div className="App">
             <Container fluid>
 
         
         <br/>
         <br/>
-
 
             
         <h1>Welcome, {firstName} </h1>
@@ -63,8 +60,8 @@ class Home extends Component {
             <Card style={{  }} class='w-25 card align-items-center' align="center">
               <Card.Body>
                 <Card.Title>Asset Balances</Card.Title>
-                <Card.Text id="bal1" align="center" style={{}} >
-
+                <Card.Text align="center" style={{}} >
+                    {localStorage.getItem('assetBalance')}
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -75,7 +72,8 @@ class Home extends Component {
             <Card style={{ }} class='w-25' align="center">
               <Card.Body>
                 <Card.Title>Asset Balances</Card.Title>
-                <Card.Text id="bal2" class=".justify-content-center" align="center">
+                <Card.Text class=".justify-content-center" align="center">
+                    {localStorage.getItem('cashBalance')}
                 </Card.Text>
               </Card.Body>
             </Card>
