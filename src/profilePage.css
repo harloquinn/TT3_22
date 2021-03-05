@@ -1,0 +1,46 @@
+.profile-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+}
+
+.profile-container > h1 {
+  color: black;
+  font-size: 100px;
+  margin-top: -100px;
+}
+
+.profile-container > p {
+  margin-top: 8px;
+  color: black;
+  font-size: 32px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.profile-personalInfo {
+  height: 30%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+}
+
+.profile-accountInfo {
+  height: 30%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+}

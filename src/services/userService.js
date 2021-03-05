@@ -1,5 +1,6 @@
 export const userService = {
     login,
+    logout
 };
 
 function login(username, password) {
@@ -18,17 +19,27 @@ function login(username, password) {
     return fetch(`${requestURL}`,requestOptions)
         .then(handleResponse)
         .then(response => {  
-            localStorage.setItem('user', (response));
-            localStorage.setItem('accountKey', response.accountKey);
-            localStorage.setItem('firstName', response.firstName);
-            localStorage.setItem('lastName', response.lastName);
-            localStorage.setItem('nric', response.nric);
-            localStorage.setItem('address', response.address);
-            localStorage.setItem('phoneNumber', response.phoneNumber);
-            localStorage.setItem('email', response.email);
+            // localStorage.setItem('user', (response));
+            localStorage.setItem('accountKey', JSON.stringify(response.accountKey));
+            localStorage.setItem('firstName', JSON.stringify(response.firstName));
+            localStorage.setItem('lastName', JSON.stringify(response.lastName));
+            localStorage.setItem('nric', JSON.stringify(response.nric));
+            localStorage.setItem('address', JSON.stringify(response.address));
+            localStorage.setItem('phoneNumber', JSON.stringify(response.phoneNumber));
+            localStorage.setItem('email', JSON.stringify(response.email));
 
             return response;
         });
+}
+
+function logout() {
+    localStorage.removeItem('accountKey');
+    localStorage.removeItem('firstName');
+    localStorage.removeItem('lastName');
+    localStorage.removeItem('nric');
+    localStorage.removeItem('address');
+    localStorage.removeItem('phoneNumber');
+    localStorage.removeItem('email');
 }
 
 function handleResponse(response) {
