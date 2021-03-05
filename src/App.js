@@ -4,7 +4,7 @@ import NavBar from './NavBar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { LoginPage } from './LoginPage';
-
+import BuySell from './BuySell/BuySellPage';
 
 function App() {
   const history = createBrowserHistory();
@@ -15,10 +15,11 @@ function App() {
         <Switch>
           <Profile exact path='/' component={Profile}/>
           <LoginPage exact path='/login' component={LoginPage}/>
+          <BuySell exact path="/buysell" component={BuySell} />
         </Switch>
       </Router>
     </div>
   );
 }
 
-export { App };
+export  {App};

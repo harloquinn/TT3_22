@@ -35,9 +35,8 @@ function Navbar() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/services'
+                to='/buysell'
                 className='nav-links'
-    
               >
                 Buy/Sell
               </Link>
