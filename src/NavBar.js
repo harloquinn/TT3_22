@@ -32,6 +32,8 @@ function Navbar() {
 
   window.addEventListener('resize', showButton);
 
+ 
+
 
   return (
     <>
@@ -45,7 +47,7 @@ function Navbar() {
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-              <Link to='/' className='nav-links' onClick={closeMobileMenu} >
+              <Link to='/profile' className='nav-links' onClick={closeMobileMenu} >
                 Profile
               </Link>
             </li>
