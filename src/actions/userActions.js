@@ -3,6 +3,7 @@ import { createBrowserHistory } from 'history';
 
 export const userActions = {
     login,
+    logout
 }
 
 const history = createBrowserHistory();
@@ -26,4 +27,9 @@ function login(username, password, from) {
     function request(user) { return { type: 'USER_LOGIN_REQUEST', user } }
     function success(user) { return { type: 'USER_LOGIN_SUCCESS', user } }
     function failure(error) { return { type: 'USER_LOGIN_FAILURE', error } }
+}
+
+function logout() {
+    userService.logout();
+    return { type: 'USER_LOGOUT_REQUEST' };
 }

@@ -49,6 +49,11 @@ function LoginPage() {
                         placeholder="username"
                         onChange = {handleInputChange}
                     />
+                    {submitted && !username &&
+                        <div className="invalid-alert">
+                            Please enter your username
+                        </div>
+                    }
                     </FormGroup>
                     <FormGroup className="form-group"
                         controlId="password"
@@ -62,6 +67,11 @@ function LoginPage() {
                         placeholder="password"
                         onChange = {handleInputChange}
                     />
+                    {submitted && !password &&
+                        <div className="invalid-alert">
+                            Please enter your password
+                        </div>
+                    }
                     </FormGroup>
                     <button className="Login-btn"
                     >
