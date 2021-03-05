@@ -76,21 +76,19 @@ class BuySell extends Component {
     return (
       <BuySellPageStyles>
         {asset && (
-          <div>
+          <div className="buySellContainer">
             <p className='assetTitle'>{asset.assetSymbol}</p>
-            <Container>
-              <Row>
-                <Col>Price: {asset.price}</Col>
-                <Col>{Date(asset.timestamp)}</Col>
-              </Row>
-            </Container>
+                <p className="priceText">Price: {asset.price}</p>
+                <p>at {Date(asset.timestamp)}</p>
             <form>
-              <Form.Group className="form-group">
+              <Form.Group>
                 <Form.Control className="assetAmount" type="number" placeholder="0"  value={assetAmount} onChange={this.handleChange}/>
               </Form.Group>
+            </form>
+            <div>
               <button className="buySellButton" onClick={this.handleBuy}>BUY</button>
               <button className="buySellButton" onClick={this.handleSell}>SELL</button>
-            </form>
+            </div>
           </div>
         )}
       </BuySellPageStyles>

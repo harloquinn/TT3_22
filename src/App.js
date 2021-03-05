@@ -6,7 +6,6 @@ import { createBrowserHistory } from 'history';
 import { LoginPage } from './LoginPage';
 import BuySell from './BuySell/BuySellPage';
 
-
 function App() {
   const history = createBrowserHistory();
   return (
@@ -16,7 +15,7 @@ function App() {
         <Switch>
           <Profile exact path='/' component={Profile}/>
           <LoginPage exact path='/login' component={LoginPage}/>
-          <Route path="/buysell" component={BuySell} />
+          <BuySell exact path="/buysell" component={BuySell} />
         </Switch>
       </Router>
     </div>

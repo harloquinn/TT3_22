@@ -12,6 +12,7 @@ const BuySellPageStyles = styled.div`
         font-size: 20px;
         text-align: center;
         padding: 10px;
+        margin-bottom: 15px;
     }
     .buySellButton{
         margin: 0px 20px;
@@ -27,6 +28,17 @@ const BuySellPageStyles = styled.div`
             outline: none;
             box-shadow: 0 0 0 1pt rgb(255,50,51);
         }
+    }
+    .buySellContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+    }
+    .priceText{
+        font-size: 30px;
     }
 `;
 
