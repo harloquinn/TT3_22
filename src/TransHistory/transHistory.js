@@ -4,7 +4,8 @@ getHistory('Group22','UKhTShVZLSav656')
 function shortDate(date) {
     return (date.getMonth() + 1) + 
     "/" +  date.getDate() +
-    "/" +  date.getFullYear();
+    "/" +  date.getFullYear() + " "
+    + date.getHours() + ':' + date.getMinutes();
 }
 
 function transCat(type,cost) {
