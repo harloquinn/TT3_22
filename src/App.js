@@ -12,7 +12,7 @@ function App() {
       <Router>
       <NavBar />
       <Switch>
-      <Profile />
+      <Profile exact path='/' component={Profile}/>
       </Switch>
       </Router>
     </div>
