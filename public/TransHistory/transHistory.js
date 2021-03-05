@@ -18,7 +18,7 @@ const history = http.get('transhistory.json')
                 <td>${shortDate(time)}</td>
             </tr>
             `
-            console.log(typeof trans.timestamp)
+            
         })
         document.getElementById('output').innerHTML = output;
 
