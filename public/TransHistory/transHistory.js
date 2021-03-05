@@ -71,19 +71,22 @@ function getHistory(username='Group22', password='UKhTShVZLSav656') {
         let output = ''
     
             data.forEach(function(trans){
-                time = new Date(trans.timestamp*1000)
-                output += `
-                <tr ${typeStyle(trans.orderType)} >
-                    <th scope="row">${trans.transactionId}</th>
-                    <td>${trans.orderType}</td>
-                    <td>${trans.assetSymbol}</td>
-                    <td >${trans.assetAmount}</td>
-                    <td>${'$'+trans.assetPrice}</td>
-                    <td>${transCat(trans.orderType, trans.cashAmount)}</td>
-                    <td>${shortDate(time)}</td>
-                </tr>
-                `
                 
+                time = new Date(trans.timestamp*1000)
+                if(trans.assetAmount >0){
+                    
+                    output += `
+                    <tr ${typeStyle(trans.orderType)} >
+                        <th scope="row">${trans.transactionId}</th>
+                        <td>${trans.orderType}</td>
+                        <td>${trans.assetSymbol}</td>
+                        <td >${trans.assetAmount}</td>
+                        <td>${'$'+trans.assetPrice}</td>
+                        <td>${transCat(trans.orderType, trans.cashAmount)}</td>
+                        <td>${shortDate(time)}</td>
+                    </tr>
+                    `
+                }
             })
             document.getElementById('output').innerHTML = output;
     
