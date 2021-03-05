@@ -29,7 +29,7 @@ function Navbar() {
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-              <Link to='/' className='nav-links' >
+              <Link to='/profile' className='nav-links' >
                 Profile
               </Link>
             </li>
@@ -43,13 +43,13 @@ function Navbar() {
               </Link>
             </li>
             <li className='nav-item'>
-              <button
+              <Link
                 onClick={handleLogout}
                 to='/'
                 className='nav-links'
               >
                 Logout
-              </button>
+              </Link>
             </li>
           </ul>
             </div>
