@@ -3,15 +3,27 @@ import './profilePage.css';
 
 function Profile() {
 
-    const profile = {
-        "phoneNumber": "(+65) 96100402",
-        "accountKey": "2b14f7ac-c26a-43f9-a202-b7c79a2fdbde",
-        "lastName": "Mosciski",
-        "username": "Group22",
-        "address": "84463 Zackery Springs",
-        "email": "group22@techtrek.com",
-        "firstName": "Rhiannon",
-        "nric": "S30394410U"};
+    const [profile,setProfile] = useState({
+        firstName:'',
+        lastName:'',
+        nric:'',
+        phoneNumber:'',
+        email:''
+    })
+
+    useEffect(async() => {
+        
+    setProfile({...profile,
+        firstName:JSON.parse(localStorage.getItem('firstName')),
+        lastName:JSON.parse(localStorage.getItem('lastName')),
+        nric:JSON.parse(localStorage.getItem('nric')),
+        email:JSON.parse(localStorage.getItem('email')),
+        phoneNumber:JSON.parse(localStorage.getItem('phoneNumber')),
+    });
+
+    
+    },[]);
+
 
     //while waiting for localStorage.parse
 
@@ -23,11 +35,8 @@ function Profile() {
                     <label htmlFor="firstName">First Name:{profile.firstName}</label>
                     <label htmlFor="lastName">Last Name:{profile.lastName}</label>
                     <label htmlFor="nric">NRIC:{profile.nric}</label>
-                    <label htmlFor="nric">Phone Number:{profile.phoneNumber}</label>
-            </div>
-            <div className='profile-accountInfo'>
-              <label htmlFor="username">Username:{profile.username}</label>
-              <label htmlFor="email">NRIC:{profile.email}</label>
+                    <label htmlFor="phoneNumber">Phone Number:{profile.phoneNumber}</label>
+                    <label htmlFor="email">Email:{profile.email}</label>
             </div>
       </div>
     );

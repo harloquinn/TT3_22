@@ -16,12 +16,39 @@ function Navbar() {
   }
   const handleClick = () => setClick(!click);
 
+  const closeMobileMenu = () => setClick(false);
+
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  };
+
+
+
+
+
+
+
+  useEffect(() => {
+    showButton();
+  }, []);
+
+  window.addEventListener('resize', showButton);
+
+
+
+const shouldDisplayLogout = (JSON.parse(localStorage.getItem('firstName')));
+
+
 
   return (
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
-          <Link to='/' className='navbar-logo' >
+          <Link to='/' className='navbar-logo' onClick={closeMobileMenu} >
             DBS
             </Link>
             <div className='navbar-icon'>
@@ -29,7 +56,7 @@ function Navbar() {
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-              <Link to='/profile' className='nav-links' >
+              <Link to='/profile' className='nav-links' onClick={closeMobileMenu} >
                 Profile
               </Link>
             </li>
@@ -37,19 +64,28 @@ function Navbar() {
               <Link
                 to='/buysell'
                 className='nav-links'
+                onClick={closeMobileMenu}
               >
                 Buy/Sell
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link
-                onClick={handleLogout}
-                to='/'
-                className='nav-links'
-              >
-                Logout
-              </Link>
-            </li>
+              {!shouldDisplayLogout && <li className='nav-item'>
+                <Link
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+                >
+                  Login
+                </Link>
+            </li> }
+            {shouldDisplayLogout && <li className='nav-item'>
+                <Link
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+                  onClick={handleLogout}
+                >
+                  Logout
+                </Link>
+            </li> }
           </ul>
             </div>
       </nav>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Profile from './profilePage';
 import NavBar from './NavBar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { LoginPage } from './LoginPage';
 import BuySell from './BuySell/BuySellPage';
