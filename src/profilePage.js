@@ -3,12 +3,23 @@ import './profilePage.css';
 
 function Profile() {
 
-    const [profile,setProfile] = useState({})
+    const [profile,setProfile] = useState({
+        firstName:'',
+        lastName:'',
+        nric:'',
+        phoneNumber:'',
+        email:''
+    })
 
     useEffect(async() => {
-
-
-     console.log(JSON.parse(localStorage.getItem('user.address')));
+        
+    setProfile({...profile,
+        firstName:JSON.parse(localStorage.getItem('firstName')),
+        lastName:JSON.parse(localStorage.getItem('lastName')),
+        nric:JSON.parse(localStorage.getItem('nric')),
+        email:JSON.parse(localStorage.getItem('email')),
+        phoneNumber:JSON.parse(localStorage.getItem('phoneNumber')),
+    });
 
     
     },[]);
@@ -24,11 +35,8 @@ function Profile() {
                     <label htmlFor="firstName">First Name:{profile.firstName}</label>
                     <label htmlFor="lastName">Last Name:{profile.lastName}</label>
                     <label htmlFor="nric">NRIC:{profile.nric}</label>
-                    <label htmlFor="nric">Phone Number:{profile.phoneNumber}</label>
-            </div>
-            <div className='profile-accountInfo'>
-              <label htmlFor="username">Username:{profile.username}</label>
-              <label htmlFor="email">NRIC:{profile.email}</label>
+                    <label htmlFor="phoneNumber">Phone Number:{profile.phoneNumber}</label>
+                    <label htmlFor="email">Email:{profile.email}</label>
             </div>
       </div>
     );
