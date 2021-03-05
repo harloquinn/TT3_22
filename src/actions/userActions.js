@@ -27,3 +27,4 @@ function login(username, password, from) {
     function success(user) { return { type: 'USER_LOGIN_SUCCESS', user } }
     function failure(error) { return { type: 'USER_LOGIN_FAILURE', error } }
 }
+
