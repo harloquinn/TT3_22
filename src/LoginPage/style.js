@@ -16,6 +16,10 @@ const LoginPageStyles = styled.div`
         height: 300px;
         border: 5px solid rgba(255,50,51, 0.7);
     }
+    .invalid-alert{
+        padding: 5px;
+        color: rgba(255,50,51, 0.5);
+    }
     .form-group{
         display: flex;
         flex-direction: column;
@@ -28,7 +32,7 @@ const LoginPageStyles = styled.div`
     }
     .form-input{
         margin-top: 8px;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         min-width: 14em;
         height: 40px;
         padding: 0px 10px;
@@ -49,6 +53,7 @@ const LoginPageStyles = styled.div`
         height: 35px;
         border-radius: 4px;
         border: 0;
+        margin-top: 20px;
         font-family: 'Open Sans', sans-serif;
         color: white;
         font-size: 18px;

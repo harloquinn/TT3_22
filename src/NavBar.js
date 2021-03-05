@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { userActions } from './actions';
+
 import './NavBar.css';
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-
-
+  
+  const dispatch = useDispatch();
+  function handleLogout(e) {
+    dispatch(userActions.logout());
+  }
   const handleClick = () => setClick(!click);
 
   const closeMobileMenu = () => setClick(false);
@@ -53,13 +59,14 @@ function Navbar() {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link
+              <button
+                onClick={handleLogout}
                 to='/'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
                 Logout
-              </Link>
+              </button>
             </li>
           </ul>
             </div>
