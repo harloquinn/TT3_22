@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import './index.css';
 import {Card, Button, Container, Row, Col} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link } from "react-router-dom";
 
 
-const firstName  = 'Mary';
+const firstName  = localStorage.getItem('firstName');
+const key = localStorage.getItem('accountKey')
+
 let balances;
 
 
@@ -15,7 +19,7 @@ fetch('https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/bala
     'x-api-key': '2jaIOnu18S6GcL4CB70w4d3PgB9rcvq74boP2yNe'
   },
   body: JSON.stringify({
-    accountKey: '2b14f7ac-c26a-43f9-a202-b7c79a2fdbde'
+    accountKey: key
   })
 })
 .then((response) => {
@@ -70,7 +74,7 @@ class Home extends Component {
 
             <Card style={{ }} class='w-25' align="center">
               <Card.Body>
-                <Card.Title>Asset Balances</Card.Title>
+                <Card.Title>Class Balances</Card.Title>
                 <Card.Text class=".justify-content-center" align="center">
                     {localStorage.getItem('cashBalance')}
                 </Card.Text>
@@ -87,8 +91,8 @@ class Home extends Component {
         <Row>
           <Col></Col>
           <Col>
-            <button type="button" class="btn btn-primary btn-lg mr-2" to="/" style={{ }}>Transaction History</button>
-            <button type="button" class="btn btn-primary btn-lg mr-2" to="/">Buy or Sell Assets</button>
+          <button type="button" class="btn btn-primary btn-lg mr-2" to="/" >Transaction History</button>
+          <Link to="/buysell"> <button type="button" class="btn btn-primary btn-lg mr-2" to="/">Buy or Sell Assets</button> </Link>
           </Col>
  
           <Col></Col>
