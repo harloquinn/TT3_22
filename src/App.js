@@ -1,20 +1,23 @@
-import BuySell from "./BuySellPage.js";
+import React from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
+import { LoginPage } from './LoginPage';
+import BuySell from './BuySell/BuySellPage';
 
 function App() {
   const history = createBrowserHistory();
-
   return (
     <div className="App">
-      <Router history={history}>
+       <Router history={history}>
           <Switch>
-              <Route path="/buySell" component={BuySell} />
+              <Route path="/login" component={LoginPage} />
+              <Route path="/buysell" component={BuySell} />
               <Redirect from="*" to="/" />
+
           </Switch>
-      </Router> 
+      </Router>        
     </div>
   );
 }
 
-export default App;
+export  {App};
