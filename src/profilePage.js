@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './profilePage.css';
 
 function Profile() {
 
@@ -12,31 +13,22 @@ function Profile() {
         "firstName": "Rhiannon",
         "nric": "S30394410U"};
 
+    //while waiting for localStorage.parse
+
     return (
       <div className="profile-container">
-          <div className='profile-info'>
-              <div className='profile-firstName'>
-              <label htmlFor="firstName">First Name:{profile.firstName}</label>
-              </div>
-              <div className='profile-lasttName'>
-              <label htmlFor="lastName">Last Name:{profile.lastName}</label>
-              </div>
-              <div className='profile-nric'>
-              <label htmlFor="nric">NRIC:{profile.nric}</label>
+          <h1>WELCOME {profile.username} </h1>
+          <h2>Please look at your information below</h2>
+              <div className='profile-personalInfo'>
+                    <label htmlFor="firstName">First Name:{profile.firstName}</label>
+                    <label htmlFor="lastName">Last Name:{profile.lastName}</label>
+                    <label htmlFor="nric">NRIC:{profile.nric}</label>
+                    <label htmlFor="nric">Phone Number:{profile.phoneNumber}</label>
             </div>
-            <div className='profile-phoneNumber'>
-              <label htmlFor="nric">Phone Number:{profile.phoneNumber}</label>
-            </div>
-            <div className='profile-username'>
+            <div className='profile-accountInfo'>
               <label htmlFor="username">Username:{profile.username}</label>
-            </div>
-            <div className='profile-email'>
               <label htmlFor="email">NRIC:{profile.email}</label>
             </div>
-            <div className='profile-accountKey'>
-              <label htmlFor="accountKey">Account Key:{profile.accountKey}</label>
-            </div>
-        </div>
       </div>
     );
   }
