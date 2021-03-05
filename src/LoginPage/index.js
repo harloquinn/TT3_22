@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { FormGroup, FormControl, FormLabel } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { userActions } from '../actions';
-
+import dbs_logo from '../images/dbs_logo.png';
 import LoginPageStyles from './style';
 import authentication from '../reducers/authentication';
 
@@ -38,6 +38,7 @@ function LoginPage() {
         <LoginPageStyles>
             <div className="Login-box">
                 <form className="Login-form" onSubmit={handleSubmit}>
+                    <img className="logo" src={dbs_logo} />
                     <FormGroup className="form-group"
                         controlId="username"
                     >

@@ -8,16 +8,22 @@ const LoginPageStyles = styled.div`
         align-items: center;
         height:100vh; 
     }
+    .logo{
+        height:40px;
+        width: 100px;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
     .Login-form{
         padding: 30px;
         display: flex;
         flex-direction: column;
         align-items:center;
-        height: 300px;
-        border: 5px solid rgba(255,50,51, 0.7);
+        border-top: 8px solid rgba(255,50,51) !important;
+        border: 1px solid;
     }
     .invalid-alert{
-        padding: 5px;
+        padding: 8px;
         color: rgba(255,50,51, 0.5);
     }
     .form-group{
@@ -49,7 +55,7 @@ const LoginPageStyles = styled.div`
     }
     .Login-btn{
         background-color: ${dbsRed};
-        width: 120px;
+        width: 100%;
         height: 35px;
         border-radius: 4px;
         border: 0;
