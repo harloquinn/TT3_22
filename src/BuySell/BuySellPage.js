@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Col, Container, Row, Form} from 'react-bootstrap';
+import {Form} from 'react-bootstrap';
 import BuySellPageStyles from './style';
 
 class BuySell extends Component {
