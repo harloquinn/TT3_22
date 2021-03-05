@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { userActions } from '../actions';
 
 import LoginPageStyles from './style';
+import authentication from '../reducers/authentication';
 
 function LoginPage() {
     const [inputs, setInputs] = useState({
@@ -49,6 +50,11 @@ function LoginPage() {
                         placeholder="username"
                         onChange = {handleInputChange}
                     />
+                    {submitted && !username &&
+                        <div className="invalid-alert">
+                            Please enter your username
+                        </div>
+                    }
                     </FormGroup>
                     <FormGroup className="form-group"
                         controlId="password"
@@ -62,6 +68,11 @@ function LoginPage() {
                         placeholder="password"
                         onChange = {handleInputChange}
                     />
+                    {submitted && !password &&
+                        <div className="invalid-alert">
+                            Please enter your password
+                        </div>
+                    }
                     </FormGroup>
                     <button className="Login-btn"
                     >
